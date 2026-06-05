@@ -36,3 +36,16 @@ th,td{
     border:1px solid #ddd;
     text-align:left;
 }
+body{
+    background:
+    linear-gradient(
+        rgba(0,0,0,.65),
+        rgba(0,0,0,.65)
+    ),
+    url("https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1920");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    color:white;
+}
