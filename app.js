@@ -62,3 +62,6 @@ Group ${draw[i][1]}
 function toggleFullscreen(){ if(!document.fullscreenElement){document.documentElement.requestFullscreen()} else {document.exitFullscreen()}}
 function saveNames(){localStorage.setItem('wc_names',document.getElementById('names').value)}
 function loadNames(){document.getElementById('names').value=localStorage.getItem('wc_names')||''}
+function toggleHiddenReveal(){
+    hiddenReveal = !hiddenReveal;
+}
