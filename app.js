@@ -22,7 +22,22 @@ async function randomise(){
  let rows='';
  for(let i=0;i<Math.min(names.length,draw.length);i++){
 document.getElementById('presentation').innerHTML =
-'⚽ Drawing Team...';
+document.getElementById('presentation').innerHTML = `
+<div style="
+font-size:4rem;
+font-weight:bold;
+text-align:center;
+">
+🏆 CROOKLANDS WORLD CUP 2026 🏆
+</div>
+
+<div style="
+font-size:3rem;
+margin-top:40px;
+">
+⚽ DRAWING TEAM...
+</div>
+`;
 
 await new Promise(r=>setTimeout(r,1000));
 
