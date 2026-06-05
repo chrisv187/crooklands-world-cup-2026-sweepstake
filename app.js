@@ -64,4 +64,10 @@ function saveNames(){localStorage.setItem('wc_names',document.getElementById('na
 function loadNames(){document.getElementById('names').value=localStorage.getItem('wc_names')||''}
 function toggleHiddenReveal(){
     hiddenReveal = !hiddenReveal;
+
+    alert(
+        hiddenReveal
+        ? "🙈 Hidden Reveal Mode ON"
+        : "👀 Hidden Reveal Mode OFF"
+    );
 }
