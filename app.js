@@ -180,3 +180,17 @@ if(e.key.toLowerCase()==='h'){
 ```
 
 });
+document.getElementById('presentation').innerHTML = `
+<div style="font-size:5rem;">
+🏆 DRAW COMPLETE 🏆
+</div>
+
+<div style="font-size:2rem;">
+Good luck everyone!
+</div>
+`;
+
+confetti({
+    particleCount:500,
+    spread:180
+});
