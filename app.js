@@ -23,6 +23,10 @@ async function randomise(){
  for(let i=0;i<Math.min(names.length,draw.length);i++){
 document.getElementById('presentation').innerHTML =
 '⚽ Drawing Team...';
+
+await new Promise(r=>setTimeout(r,1000));
+
+if(hiddenReveal){
 if(hiddenReveal){
 
     document.getElementById('presentation').innerHTML = `
@@ -50,7 +54,6 @@ if(hiddenReveal){
             .addEventListener('click', resolve);
     });
 }
-await new Promise(r=>setTimeout(r,1000));
   document.getElementById('presentation').innerHTML = `
 <div style="font-size:3rem;font-weight:bold;margin-bottom:20px;">
 ${names[i]}
