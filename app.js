@@ -29,6 +29,11 @@ await new Promise(r=>setTimeout(r,1000));
 if(hiddenReveal){
 
     document.getElementById('presentation').innerHTML = `
+    confetti({
+    particleCount: 120,
+    spread: 90,
+    origin: { y: 0.6 }
+});
     <div style="font-size:3rem;font-weight:bold;">
         ${names[i]}
     </div>
