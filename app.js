@@ -92,6 +92,17 @@ function toggleFullscreen(){ if(!document.fullscreenElement){document.documentEl
 function saveNames(){localStorage.setItem('wc_names',document.getElementById('names').value)}
 function loadNames(){document.getElementById('names').value=localStorage.getItem('wc_names')||''}
 function toggleHiddenReveal(){
+ document.addEventListener('keydown', (e) => {
+
+    if(e.key === 'f'){
+        toggleFullscreen();
+    }
+
+    if(e.key === 'h'){
+        toggleHiddenReveal();
+    }
+
+});
     hiddenReveal = !hiddenReveal;
 
     alert(
