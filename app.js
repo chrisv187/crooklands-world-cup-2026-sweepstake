@@ -26,7 +26,6 @@ return x;
 
 async function randomise(){
 
-```
 let names =
     document
     .getElementById('names')
@@ -129,7 +128,6 @@ document.getElementById('results').innerHTML =
 '<table><tr><th>Participant</th><th>Team</th><th>Group</th></tr>'
 + rows +
 '</table>';
-```
 
 }
 
@@ -155,7 +153,6 @@ localStorage.getItem('wc_names') || '';
 
 function toggleHiddenReveal(){
 
-```
 hiddenReveal = !hiddenReveal;
 
 alert(
@@ -163,13 +160,11 @@ alert(
     ? "🙈 Hidden Reveal Mode ON"
     : "👀 Hidden Reveal Mode OFF"
 );
-```
 
 }
 
 document.addEventListener('keydown',(e)=>{
 
-```
 if(e.key.toLowerCase()==='f'){
     toggleFullscreen();
 }
@@ -177,6 +172,5 @@ if(e.key.toLowerCase()==='f'){
 if(e.key.toLowerCase()==='h'){
     toggleHiddenReveal();
 }
-```
 
 });
