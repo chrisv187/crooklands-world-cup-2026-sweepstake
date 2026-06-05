@@ -25,3 +25,29 @@
 <script src="app.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>  
 </body></html>
+function downloadCSV(){
+
+    let csv = "Participant,Team,Group\n";
+
+    document.querySelectorAll("#results table tr").forEach((row,index)=>{
+
+        if(index === 0) return; // skip header
+
+        let cols = [...row.children].map(c => c.innerText);
+
+        csv += cols.join(",") + "\n";
+    });
+
+    const blob = new Blob([csv],{
+        type:"text/csv"
+    });
+
+    const a = document.createElement("a");
+
+    a.href = URL.createObjectURL(blob);
+    a.download = "Crooklands_World_Cup_2026_Sweepstake.csv";
+
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+}
