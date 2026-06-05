@@ -1,4 +1,4 @@
-
+let hiddenReveal = false;
 const teams=[
 ["Mexico","A"],["South Africa","A"],["South Korea","A"],["Czechia","A"],
 ["Canada","B"],["Bosnia & Herzegovina","B"],["Qatar","B"],["Switzerland","B"],
