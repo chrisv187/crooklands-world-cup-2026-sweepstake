@@ -27,7 +27,6 @@ document.getElementById('presentation').innerHTML =
 await new Promise(r=>setTimeout(r,1000));
 
 if(hiddenReveal){
-if(hiddenReveal){
 
     document.getElementById('presentation').innerHTML = `
     <div style="font-size:3rem;font-weight:bold;">
@@ -92,7 +91,6 @@ function toggleFullscreen(){ if(!document.fullscreenElement){document.documentEl
 function saveNames(){localStorage.setItem('wc_names',document.getElementById('names').value)}
 function loadNames(){document.getElementById('names').value=localStorage.getItem('wc_names')||''}
 function toggleHiddenReveal(){
- document.addEventListener('keydown', (e) => {
 
     if(e.key === 'f'){
         toggleFullscreen();
@@ -111,3 +109,4 @@ function toggleHiddenReveal(){
         : "👀 Hidden Reveal Mode OFF"
     );
 }
+ document.addEventListener('keydown', (e) => {
