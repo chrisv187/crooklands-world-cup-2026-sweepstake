@@ -21,11 +21,33 @@ async function randomise(){
  let draw=shuffle(teams);
  let rows='';
  for(let i=0;i<Math.min(names.length,draw.length);i++){
-   document.getElementById('presentation').innerHTML =
-`🎉 ${names[i]} draws <strong>${draw[i][0]}</strong><br>
-Group ${draw[i][1]}`;
+document.getElementById('presentation').innerHTML =
+'⚽ Drawing Team...';
+
+await new Promise(r=>setTimeout(r,1000));
+  document.getElementById('presentation').innerHTML = `
+<div style="font-size:3rem;font-weight:bold;margin-bottom:20px;">
+${names[i]}
+</div>
+
+<div style="font-size:5rem;">
+🏆
+</div>
+
+<div style="font-size:4rem;font-weight:bold;color:#FFD700;">
+${draw[i][0]}
+</div>
+
+<div style="font-size:2rem;">
+Group ${draw[i][1]}
+</div>
+`;
    if(window.speechSynthesis){
-      speechSynthesis.speak(new SpeechSynthesisUtterance(names[i]+' has drawn '+draw[i]));
+      speechSynthesis.speak(
+  new SpeechSynthesisUtterance(
+    names[i] + ' has drawn ' + draw[i][0]
+  )
+);
    }
    await new Promise(r=>setTimeout(r,1500));
    rows += `<tr>
