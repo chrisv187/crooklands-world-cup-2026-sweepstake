@@ -171,10 +171,14 @@ revealSound.play();
    if(window.speechSynthesis){
 
     const announcement =
-        `Ladies and gentlemen.
-        ${names[i]} has drawn
-        ${draw[i][0]}.
-        Group ${draw[i][1]}.`;
+const announcement =
+    `Ladies and gentlemen...
+
+    ${names[i]} has drawn...
+
+    ${draw[i][0]}!
+
+    Group ${draw[i][1]}.`;
 
     const speech =
         new SpeechSynthesisUtterance(announcement);
@@ -186,7 +190,6 @@ revealSound.play();
     speech.voice = announcerVoice;
     speechSynthesis.speak(speech);
 }
-    }
 
     await new Promise(r=>setTimeout(r,1500));
 
