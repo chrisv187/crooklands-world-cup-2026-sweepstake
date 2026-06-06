@@ -1,6 +1,9 @@
 let hiddenReveal = false;
 
 const teams = [
+const drawSound = new Audio('sounds/draw.mp3');
+const revealSound = new Audio('sounds/reveal.mp3');
+const finaleSound = new Audio('sounds/finale.mp3');    
 ["Mexico","A"],["South Africa","A"],["South Korea","A"],["Czechia","A"],
 ["Canada","B"],["Bosnia & Herzegovina","B"],["Qatar","B"],["Switzerland","B"],
 ["Brazil","C"],["Morocco","C"],["Haiti","C"],["Scotland","C"],
@@ -46,6 +49,8 @@ for(let i=0;i<Math.min(names.length,draw.length);i++){
 
     <div style="font-size:3rem;margin-top:40px;">
         ⚽ DRAWING TEAM...
+drawSound.currentTime = 0;
+drawSound.play();    
     </div>
     `;
 
@@ -97,6 +102,8 @@ for(let i=0;i<Math.min(names.length,draw.length);i++){
         Group ${draw[i][1]}
     </div>
     `;
+revealSound.currentTime = 0;
+revealSound.play();
 
     if(typeof confetti === 'function'){
         confetti({
@@ -123,6 +130,12 @@ for(let i=0;i<Math.min(names.length,draw.length);i++){
         <td>Group ${draw[i][1]}</td>
     </tr>`;
 }
+    finaleSound.play();
+
+confetti({
+    particleCount:500,
+    spread:180
+});
 
 document.getElementById('results').innerHTML =
 '<table><tr><th>Participant</th><th>Team</th><th>Group</th></tr>'
