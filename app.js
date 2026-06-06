@@ -163,10 +163,9 @@ revealSound.play();
         <td>Group ${draw[i][1]}</td>
     </tr>`;
 }
-    finaleSound.play();
+finaleSound.play();
 
-});
-    document.getElementById('presentation').innerHTML = `
+document.getElementById('presentation').innerHTML = `
 <div style="font-size:6rem;font-weight:bold;">
 🏆 DRAW COMPLETE 🏆
 </div>
