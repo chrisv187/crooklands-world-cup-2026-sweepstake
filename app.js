@@ -75,13 +75,11 @@ for(let i=0;i<Math.min(names.length,draw.length);i++){
     </div>
     `;
 
-    drawSound.currentTime = 0;
-drawSound.play();
-
     await new Promise(r=>setTimeout(r,1000));
     // Team roulette animation
 
-    drawSound.loop = true;
+drawSound.loop = true;
+drawSound.currentTime = 0;
 drawSound.play();
     
 for(let spin=0; spin<25; spin++){
@@ -141,7 +139,8 @@ drawSound.currentTime = 0;
                 .addEventListener('click',resolve);
         });
     }
-
+drawSound.pause();
+drawSound.currentTime = 0;
     document.getElementById('presentation').innerHTML = `
     <div style="font-size:3rem;font-weight:bold;">
         ${names[i]}
@@ -170,15 +169,15 @@ revealSound.play();
 
    if(window.speechSynthesis){
 
-    const announcement =
-const announcement =
-    `Ladies and gentlemen...
+    const announcement = `
+    Ladies and gentlemen...
 
     ${names[i]} has drawn...
 
     ${draw[i][0]}!
 
-    Group ${draw[i][1]}.`;
+    Group ${draw[i][1]}.
+    `;
 
     const speech =
         new SpeechSynthesisUtterance(announcement);
@@ -188,9 +187,9 @@ const announcement =
     speech.volume = 1;
 
     speech.voice = announcerVoice;
+    speechSynthesis.cancel(); // stop overlap
     speechSynthesis.speak(speech);
 }
-
     await new Promise(r=>setTimeout(r,1500));
 
     rows += `
