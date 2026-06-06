@@ -190,13 +190,7 @@ revealSound.play();
     speechSynthesis.cancel(); // stop overlap
     speechSynthesis.speak(speech);
 }
-   await new Promise(resolve => {
-
-    speech.onend = resolve;
-
-    speechSynthesis.speak(speech);
-
-});
+  await new Promise(r=>setTimeout(r,4500));
 
     rows += `
     <tr>
