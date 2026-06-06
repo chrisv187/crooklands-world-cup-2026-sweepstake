@@ -1,5 +1,27 @@
 let hiddenReveal = false;
 
+let announcerVoice = null;
+
+function loadVoice(){
+
+    const voices =
+        speechSynthesis.getVoices();
+
+    announcerVoice =
+        voices.find(v =>
+            v.name.includes('Daniel')
+        ) ||
+        voices.find(v =>
+            v.name.includes('Karen')
+        ) ||
+        voices[0];
+}
+
+speechSynthesis.onvoiceschanged =
+    loadVoice;
+
+loadVoice();
+
 const drawSound = new Audio('draw.mp3');
 const revealSound = new Audio('reveal.mp3');
 const finaleSound = new Audio('finale.mp3'); 
