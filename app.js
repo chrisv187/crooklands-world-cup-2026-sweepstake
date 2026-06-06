@@ -134,9 +134,6 @@ revealSound.play();
 }
     finaleSound.play();
 
-confetti({
-    particleCount:500,
-    spread:180
 });
     document.getElementById('presentation').innerHTML = `
 <div style="font-size:6rem;font-weight:bold;">
