@@ -146,12 +146,23 @@ revealSound.play();
         });
     }
 
-    if(window.speechSynthesis){
-        speechSynthesis.speak(
-            new SpeechSynthesisUtterance(
-                names[i] + ' has drawn ' + draw[i][0]
-            )
-        );
+   if(window.speechSynthesis){
+
+    const announcement =
+        `Ladies and gentlemen.
+        ${names[i]} has drawn
+        ${draw[i][0]}.
+        Group ${draw[i][1]}.`;
+
+    const speech =
+        new SpeechSynthesisUtterance(announcement);
+
+    speech.rate = 0.85;
+    speech.pitch = 0.9;
+    speech.volume = 1;
+
+    speechSynthesis.speak(speech);
+}
     }
 
     await new Promise(r=>setTimeout(r,1500));
