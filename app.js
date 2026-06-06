@@ -26,7 +26,6 @@ return x;
 
 async function randomise(){
 
-```
 let names =
     document
     .getElementById('names')
