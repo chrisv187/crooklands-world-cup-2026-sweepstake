@@ -1,9 +1,10 @@
 let hiddenReveal = false;
 
-const teams = [
 const drawSound = new Audio('draw.mp3');
 const revealSound = new Audio('reveal.mp3');
-const finaleSound = new Audio('finale.mp3');    
+const finaleSound = new Audio('finale.mp3'); 
+
+const teams = [   
 ["Mexico","A"],["South Africa","A"],["South Korea","A"],["Czechia","A"],
 ["Canada","B"],["Bosnia & Herzegovina","B"],["Qatar","B"],["Switzerland","B"],
 ["Brazil","C"],["Morocco","C"],["Haiti","C"],["Scotland","C"],
@@ -48,11 +49,12 @@ for(let i=0;i<Math.min(names.length,draw.length);i++){
     </div>
 
     <div style="font-size:3rem;margin-top:40px;">
-        ⚽ DRAWING TEAM...
-drawSound.currentTime = 0;
-drawSound.play();    
+        ⚽ DRAWING TEAM...   
     </div>
     `;
+
+    drawSound.currentTime = 0;
+drawSound.play();
 
     await new Promise(r=>setTimeout(r,1000));
 
