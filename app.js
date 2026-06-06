@@ -183,6 +183,7 @@ revealSound.play();
     speech.pitch = 0.9;
     speech.volume = 1;
 
+    speech.voice = announcerVoice;
     speechSynthesis.speak(speech);
 }
     }
