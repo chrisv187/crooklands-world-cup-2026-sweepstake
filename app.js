@@ -59,6 +59,9 @@ drawSound.play();
     await new Promise(r=>setTimeout(r,1000));
     // Team roulette animation
 
+    drawSound.loop = true;
+drawSound.play();
+    
 for(let spin=0; spin<25; spin++){
 
     let randomTeam =
@@ -86,6 +89,9 @@ for(let spin=0; spin<25; spin++){
 
     if(hiddenReveal){
 
+        drawSound.pause();
+drawSound.currentTime = 0;
+        
         document.getElementById('presentation').innerHTML = `
         <div style="font-size:3rem;font-weight:bold;">
             ${names[i]}
