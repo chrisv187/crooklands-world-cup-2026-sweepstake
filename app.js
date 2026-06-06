@@ -1,9 +1,9 @@
 let hiddenReveal = false;
 
 const teams = [
-const drawSound = new Audio('sounds/draw.mp3');
-const revealSound = new Audio('sounds/reveal.mp3');
-const finaleSound = new Audio('sounds/finale.mp3');    
+const drawSound = new Audio('draw.mp3');
+const revealSound = new Audio('reveal.mp3');
+const finaleSound = new Audio('finale.mp3');    
 ["Mexico","A"],["South Africa","A"],["South Korea","A"],["Czechia","A"],
 ["Canada","B"],["Bosnia & Herzegovina","B"],["Qatar","B"],["Switzerland","B"],
 ["Brazil","C"],["Morocco","C"],["Haiti","C"],["Scotland","C"],
