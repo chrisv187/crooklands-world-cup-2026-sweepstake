@@ -138,6 +138,20 @@ confetti({
     particleCount:500,
     spread:180
 });
+    document.getElementById('presentation').innerHTML = `
+<div style="font-size:6rem;font-weight:bold;">
+🏆 DRAW COMPLETE 🏆
+</div>
+
+<div style="font-size:3rem;margin-top:20px;">
+Good luck everyone!
+</div>
+`;
+
+confetti({
+    particleCount:600,
+    spread:180
+});
 
 document.getElementById('results').innerHTML =
 '<table><tr><th>Participant</th><th>Team</th><th>Group</th></tr>'
