@@ -170,5 +170,45 @@ if(e.key.toLowerCase()==='h'){
 }
 });
 function downloadCSV(){
-alert("Export button works!");
+
+    const table = document.querySelector("#results table");
+
+    if(!table){
+        alert("Run the draw first!");
+        return;
+    }
+
+    let csv = "Participant,Team,Group\n";
+
+    table.querySelectorAll("tr").forEach((row,index)=>{
+
+        if(index === 0) return;
+
+        const cols =
+            Array.from(row.children)
+            .map(cell => `"${cell.innerText}"`);
+
+        csv += cols.join(",") + "\n";
+    });
+
+    const blob = new Blob(
+        [csv],
+        { type:"text/csv;charset=utf-8;" }
+    );
+
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+
+    link.href = url;
+    link.download =
+        "Crooklands_World_Cup_2026_Sweepstake.csv";
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    document.body.removeChild(link);
+
+    URL.revokeObjectURL(url);
 }
