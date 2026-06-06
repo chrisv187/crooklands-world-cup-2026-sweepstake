@@ -129,6 +129,7 @@ document.getElementById('results').innerHTML =
 '<table><tr><th>Participant</th><th>Team</th><th>Group</th></tr>'
 + rows +
 '</table>';
+
 }
 
 function toggleFullscreen(){
