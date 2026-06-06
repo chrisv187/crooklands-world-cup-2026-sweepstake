@@ -57,6 +57,32 @@ for(let i=0;i<Math.min(names.length,draw.length);i++){
 drawSound.play();
 
     await new Promise(r=>setTimeout(r,1000));
+    // Team roulette animation
+
+for(let spin=0; spin<25; spin++){
+
+    let randomTeam =
+        teams[Math.floor(Math.random()*teams.length)];
+
+    document.getElementById('presentation').innerHTML = `
+    <div style="
+        font-size:4rem;
+        font-weight:bold;
+        color:#FFD700;
+    ">
+        🎡 ${randomTeam[0]}
+    </div>
+
+    <div style="
+        font-size:2rem;
+        margin-top:20px;
+    ">
+        Selecting team...
+    </div>
+    `;
+
+    await new Promise(r=>setTimeout(r,80));
+}
 
     if(hiddenReveal){
 
