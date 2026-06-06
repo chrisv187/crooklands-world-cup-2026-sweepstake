@@ -83,8 +83,7 @@ for(let spin=0; spin<25; spin++){
         Selecting team...
     </div>
     `;
-
-    await new Promise(r=>setTimeout(r,80));
+await new Promise(r=>setTimeout(r,50 + spin*5));
 }
 
     if(hiddenReveal){
