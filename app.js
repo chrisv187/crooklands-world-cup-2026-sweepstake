@@ -252,8 +252,8 @@ alert(
     : "👀 Hidden Reveal Mode OFF"
 );
 }
-document.addEventListener('keydown',(9)=>{
-if(e.key.toLowerCase()==='f'){
+document.addEventListener('keydown',(e)=>{
+if(e.key.toLowerCase()==='9'){
     toggleFullscreen();
 }
 
