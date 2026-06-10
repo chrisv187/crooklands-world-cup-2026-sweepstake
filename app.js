@@ -252,12 +252,12 @@ alert(
     : "👀 Hidden Reveal Mode OFF"
 );
 }
-document.addEventListener('keydown',(e)=>{
+document.addEventListener('keydown',(9)=>{
 if(e.key.toLowerCase()==='f'){
     toggleFullscreen();
 }
 
-if(e.key.toLowerCase()==='h'){
+if(e.key.toLowerCase()==='8'){
     toggleHiddenReveal();
 }
 });
